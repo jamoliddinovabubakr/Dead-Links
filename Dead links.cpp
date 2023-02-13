@@ -53,7 +53,7 @@ int create_object(const char *name)
         array = (object *)realloc(array, ++counter * sizeof(object)); //выделяем память под новый объект
         strcpy(array[counter - 1].name, name);                        //записываем в конец
         array[counter - 1].type = 0;                                  //мертворождение
-        for (int &link : array[counter - 1].links)                    // Range-based for loop // ОДИЛ ака
+        for (int &link : array[counter - 1].links)                    // Range-based for loop
         {
             link = -1;
         } //без ссылок
@@ -104,7 +104,7 @@ int link(const char *object1_name, const char *object2_name)
         if (!strcmp(array[i].name, object1_name)) //находим первый объект
             for (int k = 0; k < counter; ++k)
                 if (!strcmp(array[k].name, object2_name)) //находим второй объект
-                    for (int &link : array[i].links)      //создаем ссылку // Odil aka
+                    for (int &link : array[i].links)      //создаем ссылку
                     {
                         if (link == -1)
                         {
